@@ -17,7 +17,7 @@ function Adimindashboard() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/userdetails`
+        `${baseUrl}/api/v1/user/userdetails`
       );
       setUserData(response.data.data);
     } catch (error) {

@@ -32,7 +32,7 @@ const navigate=useNavigate();
   const getLikedProfiles = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/likedProfiles/${userId}`
+        `${baseUrl}/api/v1/user/likedProfiles/${userId}`
       );
       console.log("liked profiles:", response.data.likedUsers);
 
@@ -64,7 +64,7 @@ const navigate=useNavigate();
 
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/user/likeProfile/${userId}`,
+        `${baseUrl}/api/v1/user/likeProfile/${userId}`,
         { likedId: id }
       );
 
@@ -112,7 +112,7 @@ const navigate=useNavigate();
   const fetchLikedUsers = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/likedProfiles/${id}`
+        `${baseUrl}/api/v1/user/likedProfiles/${id}`
       );
       console.log("vishvaaa", response.data.likedUsers);
       setLikedProfiles(response.data.likedUsers);
@@ -130,7 +130,7 @@ const navigate=useNavigate();
     }
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       console.log("single user data", response);
       navigate(`/mainuser/${id}`);
@@ -190,7 +190,7 @@ const navigate=useNavigate();
                     <img
                           src={
                             item.profilePicture
-                              ? `${baseUrl}:8000${item.profilePicture}`
+                              ? `${baseUrl}${item.profilePicture}`
                               : " "
                           }
                           alt=""

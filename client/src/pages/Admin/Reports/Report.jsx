@@ -13,7 +13,7 @@ function Report() {
   },[])
   const fetchUserData=async(req,res)=>{
     try {
-      const response=await axios.get (`${baseUrl}t:8000/api/v1/user/usercarddetails/${id}`)
+      const response=await axios.get (`${baseUrl}t/api/v1/user/usercarddetails/${id}`)
       setUserData(response.data);
       
     } catch (error) {

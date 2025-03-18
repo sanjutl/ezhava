@@ -1,2 +1,2 @@
-const baseUrl=`http://15.207.69.234`;
+const baseUrl=`https://ukezhavamatrimony.com`;
 export default baseUrl;

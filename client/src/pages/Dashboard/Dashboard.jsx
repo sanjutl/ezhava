@@ -70,7 +70,7 @@ function Dashboard() {
   const getLikedProfiles = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/likedProfiles/${userId}`
+        `${baseUrl}/api/v1/user/likedProfiles/${userId}`
       );
 
       // Convert the array into an object for easy lookups
@@ -102,7 +102,7 @@ function Dashboard() {
 
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/user/likeProfile/${userId}`,
+        `${baseUrl}/api/v1/user/likeProfile/${userId}`,
         { likedId: id }
       );
 
@@ -123,7 +123,7 @@ function Dashboard() {
   const userDetails = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${userId}`
+        `${baseUrl}/api/v1/user/usercarddetails/${userId}`
       );
       setUserProfile(response.data.data);
       
@@ -135,7 +135,7 @@ function Dashboard() {
   const TopMatch = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/topmatch/${userId}`
+        `${baseUrl}/api/v1/user/topmatch/${userId}`
       );
       let user = response.data.matches;
       const shuffledUsers = user.sort(() => 0.5 - Math.random()).slice(0, 5);
@@ -149,7 +149,7 @@ function Dashboard() {
   const AllMatches = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/getUserById/${userId}`
+        `${baseUrl}/api/v1/user/getUserById/${userId}`
       );
       let users = response.data.user;
 
@@ -201,7 +201,7 @@ function Dashboard() {
     }
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       navigate(`/mainuser/${id}`);
     } catch (error) {
@@ -239,7 +239,7 @@ function Dashboard() {
 
     try {
       const response = await axios.patch(
-        `${baseUrl}:8000/api/v1/user/edit/${userId}`,
+        `${baseUrl}/api/v1/user/edit/${userId}`,
         formData
       );
     } catch (error) {
@@ -272,7 +272,7 @@ function Dashboard() {
 
     try {
       const response = await axios.patch(
-        `${baseUrl}:8000/api/v1/user/edit/${userId}`,
+        `${baseUrl}/api/v1/user/edit/${userId}`,
         formData
       );
 
@@ -922,7 +922,7 @@ function Dashboard() {
                         <img
                           src={
                             item.profilePicture
-                              ? `${baseUrl}:8000${item.profilePicture}`
+                              ? `${baseUrl}${item.profilePicture}`
                               : " "
                           }
                           alt=""
@@ -1011,7 +1011,7 @@ function Dashboard() {
                         <img
                           src={
                             item.profilePicture
-                              ? `${baseUrl}:8000${item.profilePicture}`
+                              ? `${baseUrl}${item.profilePicture}`
                               : ""
                           }
                           alt=""

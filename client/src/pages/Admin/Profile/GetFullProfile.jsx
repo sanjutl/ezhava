@@ -22,7 +22,7 @@ function GetFullProfile() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/unverfieduser`
+        `${baseUrl}/api/v1/user/unverfieduser`
       );
       setUserData(response.data.unverfiedUser || []);
     } catch (error) {

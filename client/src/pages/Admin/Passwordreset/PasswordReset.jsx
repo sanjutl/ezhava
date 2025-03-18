@@ -21,7 +21,7 @@ function PasswordReset() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/admin/resetpasswordadmin/${token}`,
+        `${baseUrl}/api/v1/admin/resetpasswordadmin/${token}`,
         { password: showPassword }
       );
       console.log(response.status);
