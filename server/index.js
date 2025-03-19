@@ -1,17 +1,10 @@
 import connectdb from "./mongoDB/index.js";
 import { app } from "./app.js";
-import https from "https";
+import http from "http";
 import { Server } from "socket.io";
 import path from "path";
-import fs from "fs";
 
-
-const sslOptions = {
-  key: fs.readFileSync('/home/ubuntu/ssl/cloudflare.key'),
-  cert: fs.readFileSync('/home/ubuntu/ssl/cloudflare.crt')
-};
-
-const server = https.createServer(sslOptions,app); 
+const server = http.createServer(app); 
 
 const io = new Server(server, {
   cors: {
