@@ -1,10 +1,17 @@
 import connectdb from "./mongoDB/index.js";
 import { app } from "./app.js";
-import http from "http";
+import https from "https";
 import { Server } from "socket.io";
 import path from "path";
+const sslKey =process.env.SSL_KEY_PATH;
+const sslCert =process.env.SSL_CERT_PATH;
 
-const server = http.createServer(app); 
+const options = {
+  key: sslKey,
+  cert: sslCert
+};
+
+const server = https.createServer(options,app); 
 
 const io = new Server(server, {
   cors: {
