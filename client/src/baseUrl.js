@@ -1,2 +1,2 @@
-const baseUrl=`https://ukezhamatrimony.com`;
+const baseUrl=`https://ukezhavamatrimony.com/`;
 export default baseUrl;
