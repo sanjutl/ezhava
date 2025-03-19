@@ -41,7 +41,7 @@ function FormPage5() {
       console.log(employmentStatus);
 
       const response = await axios.patch(
-        `${baseUrl}:8000/api/v1/user/edit/${id}`,
+        `${baseUrl}/api/v1/user/edit/${id}`,
         formData
       );
       if (response.status === 200) {
@@ -75,7 +75,7 @@ function FormPage5() {
   const dataBinding = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       console.log("he hee heee", response.data.data);
       setUserProfile(response.data.data);

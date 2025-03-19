@@ -45,7 +45,7 @@ function FormPage1() {
 
     try {
       const response = await axios.patch(
-        `${baseUrl}:8000/api/v1/user/edit/${id}`,
+        `${baseUrl}/api/v1/user/edit/${id}`,
         updatedForm
       );
 
@@ -65,7 +65,7 @@ function FormPage1() {
   const dataBinding = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       console.log("response", response.data.data);
       setUserProfile(response.data.data);

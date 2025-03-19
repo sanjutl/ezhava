@@ -25,7 +25,7 @@ function Settings() {
   const handleSubmit=async(e)=>{
     e.preventDefault()
     try {
-      const response = await axios.patch(`${baseUrl}:8000/api/v1/admin/resetpassword/${token}`,form)
+      const response = await axios.patch(`${baseUrl}/api/v1/admin/resetpassword/${token}`,form)
       
       
       if(response.status===200){

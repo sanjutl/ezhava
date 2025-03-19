@@ -4,7 +4,7 @@ import axios from "axios";
 import { io } from "socket.io-client";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import baseUrl from "../../baseUrl";
-const socket = io(`${baseUrl}:8000`, {
+const socket = io(`${baseUrl}`, {
   transports: ["websocket", "polling"],
   withCredentials: true,
 });
@@ -24,7 +24,7 @@ function Nav({ userId }) {
     const fetchNotifications = async () => {
       try {
         const { data } = await axios.get(
-          `${baseUrl}:8000/api/v1/user/unread/${userId}`
+          `${baseUrl}/api/v1/user/unread/${userId}`
         );
         setNotifications(Array.isArray(data?.response) ? data.response : []);
       } catch (error) {
@@ -57,7 +57,7 @@ function Nav({ userId }) {
   const hideAlert = async (id, senderId) => {
     try {
       await axios.patch(
-        `${baseUrl}:8000/api/v1/user/notificationPreview/${id}`
+        `${baseUrl}/api/v1/user/notificationPreview/${id}`
       );
       setSelectedSenderId(senderId);
       navigate(`/mainuser/${senderId}`);

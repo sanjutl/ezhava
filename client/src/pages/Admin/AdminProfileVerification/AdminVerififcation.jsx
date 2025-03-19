@@ -18,7 +18,7 @@ function AdminVerification() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       setUserData(response.data);
       console.log(response.data);
@@ -40,7 +40,7 @@ function AdminVerification() {
           {userData?.data?.pdfFile ? (
             <div style={{ height: "600px", border: "1px solid #ccc" }}>
               <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-                <Viewer fileUrl={`${baseUrl}:8000${userData.data.pdfFile}`} />
+                <Viewer fileUrl={`${baseUrl}${userData.data.pdfFile}`} />
               </Worker>
             </div>
           ) : (

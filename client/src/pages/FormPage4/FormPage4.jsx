@@ -51,7 +51,7 @@ function FormPage4() {
 
     try {
       const response = await axios.patch(
-        `${baseUrl}:8000/api/v1/user/edit/${id}`,
+        `${baseUrl}/api/v1/user/edit/${id}`,
         formData
       );
       console.log("Upload successful:", response);
@@ -82,7 +82,7 @@ function FormPage4() {
 
     try {
       const response = await axios.patch(
-        `${baseUrl}:8000/api/v1/user/edit/${id}`,
+        `${baseUrl}/api/v1/user/edit/${id}`,
         formData,
         {
           headers: {
@@ -108,7 +108,7 @@ function FormPage4() {
   const dataBinding = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       console.log("he hee heee", response.data.data);
       setUserProfile(response.data.data);

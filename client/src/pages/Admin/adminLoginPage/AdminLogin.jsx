@@ -47,7 +47,7 @@ function AdminLogin() {
 
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/admin/forgotpasswordadmin`,{ userEmail: email }
+        `${baseUrl}/api/v1/admin/forgotpasswordadmin`,{ userEmail: email }
       );
       if (response.status === 200) {
     setIsLoading(false); 
@@ -65,7 +65,7 @@ function AdminLogin() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/admin/login`,
+        `${baseUrl}/api/v1/admin/login`,
         form
       );
       if (response) {

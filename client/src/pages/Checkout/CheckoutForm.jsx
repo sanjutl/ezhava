@@ -55,7 +55,7 @@ const CheckoutWrapper = ({ userId, profileId, stripePromise }) => {
 
   useEffect(() => {
     // Create PaymentIntent when component mounts
-    axios.post(`${baseUrl}:8000/api/v1/user/create-payment-intent/${userId}/${profileId}`)
+    axios.post(`${baseUrl}/api/v1/user/create-payment-intent/${userId}/${profileId}`)
       .then((res) => {
         setClientSecret(res.data.clientSecret);
       })

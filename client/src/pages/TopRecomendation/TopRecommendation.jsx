@@ -58,7 +58,7 @@ function TopRecommendation() {
   const getLikedProfiles = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/likedProfiles/${userId}`
+        `${baseUrl}/api/v1/user/likedProfiles/${userId}`
       );
 
       // Convert the array into an object for easy lookups
@@ -89,7 +89,7 @@ function TopRecommendation() {
 
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/user/likeProfile/${userId}`,
+        `${baseUrl}/api/v1/user/likeProfile/${userId}`,
         { likedId: id }
       );
 
@@ -133,7 +133,7 @@ function TopRecommendation() {
   const TopMatch = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/topmatch/${userId}`
+        `${baseUrl}/api/v1/user/topmatch/${userId}`
       );
 
       setTopMatches(response.data.matches);
@@ -216,7 +216,7 @@ function TopRecommendation() {
     }
     try {
       const response = await axios.get(
-        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}/api/v1/user/usercarddetails/${id}`
       );
       navigate(`/mainuser/${id}`);
     } catch (error) {
@@ -902,7 +902,7 @@ function TopRecommendation() {
                       <img
                         src={
                           item.profilePicture
-                            ? `${baseUrl}:8000${item.profilePicture}`
+                            ? `${baseUrl}${item.profilePicture}`
                             : " "
                         }
                         alt="CardImage"
