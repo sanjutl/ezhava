@@ -33,7 +33,7 @@ function LoginPage() {
      setIsLoading(true); 
     try {
       const response = await axios.post(
-        `${baseUrl}:8000/api/v1/user/register`,
+        `${baseUrl}/api/v1/user/register`,
         form
       );
       if (response.status === 201) {
