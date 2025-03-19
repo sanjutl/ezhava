@@ -3,7 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import userRouter from "./routes/userRouter.js";
-import http from "http";
+import https from "https";
 import { Server } from "socket.io";
 import { fileURLToPath } from "url";
 import path from "path";

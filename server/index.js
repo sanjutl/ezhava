@@ -3,15 +3,15 @@ import { app } from "./app.js";
 import https from "https";
 import { Server } from "socket.io";
 import path from "path";
-const sslKey =process.env.SSL_KEY_PATH;
-const sslCert =process.env.SSL_CERT_PATH;
+import fs from "fs";
 
-const options = {
-  key: sslKey,
-  cert: sslCert
+
+const sslOptions = {
+  key: fs.readFileSync('/home/ubuntu/ssl/cloudflare.key'),
+  cert: fs.readFileSync('/home/ubuntu/ssl/cloudflare.crt')
 };
 
-const server = https.createServer(options,app); 
+const server = https.createServer(sslOptions,app); 
 
 const io = new Server(server, {
   cors: {
