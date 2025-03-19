@@ -14,7 +14,7 @@ const [UserData,setuserData]=useState([])
 const showData=UserData.slice(0,4)
 const fetchuserData=async (req,res) => {
   
-  const response=await axios.get(`${baseUrl}/api/v1/user/unverfieduser`)
+  const response=await axios.get(`${baseUrl}:8000/api/v1/user/unverfieduser`)
   if(response.status===200){
     setuserData(response.data.unverfiedUser || [  ])
     console.log("this",response.data.unverfiedUser);

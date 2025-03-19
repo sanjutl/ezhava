@@ -27,7 +27,7 @@ function UserSettings() {
     const fetchUserData = async () => {
       try {
         const response = await axios.get(
-          `${baseUrl}/api/v1/user/usercarddetails/${id}`
+          `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
         );
         const userData = response.data;
         console.log("Fetched User Data:", userData);
@@ -49,7 +49,7 @@ function UserSettings() {
   const handleSave = async () => {
     try {
       if (newUsername) {
-        await axios.patch(`${baseUrl}/api/v1/user/edit/${id}`, {
+        await axios.patch(`${baseUrl}:8000/api/v1/user/edit/${id}`, {
           firstName: newUsername,
         });
 
@@ -59,7 +59,7 @@ function UserSettings() {
 
       if (password) {
         await axios.post(
-          `${baseUrl}/api/v1/user/resetpassword/${id}/${token}`,
+          `${baseUrl}:8000/api/v1/user/resetpassword/${id}/${token}`,
           {
             password: password,
           }

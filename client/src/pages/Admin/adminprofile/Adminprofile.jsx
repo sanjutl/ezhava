@@ -23,7 +23,7 @@ function Adminprofile() {
   const userData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
       );
       setData(response.data.data);
       setUploadimage([response.data.data.profilePicture, ...response.data.data.image]);
@@ -42,7 +42,7 @@ function Adminprofile() {
   const handleDelete = async (req, res) => {
     try {
       const response = await axios.delete(
-        `${baseUrl}/api/v1/user/deleteUser/${id}`
+        `${baseUrl}:8000/api/v1/user/deleteUser/${id}`
       );
       toast.success("User Deleted Successfully")
       setIsModalOpen(false)
@@ -74,7 +74,7 @@ function Adminprofile() {
             <Carousel arrows infinite={false}>
               {uploadimage.length > 0 && uploadimage.map((image, index) => (
                 <div key={index} className="cardimage">
-                  <img src={`${baseUrl}${image}`} alt={`Image ${index + 1}`} />
+                  <img src={`${baseUrl}:8000${image}`} alt={`Image ${index + 1}`} />
                 </div>
               ))}
             </Carousel>

@@ -20,7 +20,7 @@ function MyProfile() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${userId}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${userId}`
       );
       console.log("User data:", response.data.data);
       setUserData(response.data.data);
@@ -49,7 +49,7 @@ function MyProfile() {
 
       try {
         const response = await axios.patch(
-          `${baseUrl}/api/v1/user/edit/${userId}`,
+          `${baseUrl}:8000/api/v1/user/edit/${userId}`,
           formData
         );
         console.log("Upload successful:", response);
@@ -73,7 +73,7 @@ function MyProfile() {
             <img
               src={
                 userData.profilePicture
-                  ? `${baseUrl}${userData.profilePicture}`
+                  ? `${baseUrl}:8000${userData.profilePicture}`
                   : ""
               }
               alt="Profile"
@@ -453,7 +453,7 @@ function MyProfile() {
                     <img
                       key={index}
                       className="my-profile-image23-single"
-                      src={`${baseUrl}${imgSrc}`}
+                      src={`${baseUrl}:8000${imgSrc}`}
                       alt={`User Image ${index}`}
                     />
                   ))}

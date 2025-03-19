@@ -53,7 +53,7 @@ function AllMatches() {
   const getLikedProfiles = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/likedProfiles/${userId}`
+        `${baseUrl}:8000/api/v1/user/likedProfiles/${userId}`
       );
       console.log("liked profiles:", response.data.likedUsers);
 
@@ -85,7 +85,7 @@ function AllMatches() {
 
     try {
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/likeProfile/${userId}`,
+        `${baseUrl}:8000/api/v1/user/likeProfile/${userId}`,
         { likedId: id }
       );
 
@@ -131,7 +131,7 @@ function AllMatches() {
   const getAllMatches = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/getUserById/${userId}`
+        `${baseUrl}:8000/api/v1/user/getUserById/${userId}`
       );
       let matchedProfiles = response.data.user;
       console.log("response", response.data.user);
@@ -216,7 +216,7 @@ function AllMatches() {
     }
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
       );
       console.log("single user data", response);
       navigate(`/mainuser/${id}`);
@@ -952,7 +952,7 @@ function AllMatches() {
                       <img
                         src={
                           item.profilePicture
-                            ? `${baseUrl}${item.profilePicture}`
+                            ? `${baseUrl}:8000${item.profilePicture}`
                             : " "
                         }
                         alt="CardImage"

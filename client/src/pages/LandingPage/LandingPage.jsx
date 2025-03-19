@@ -40,7 +40,7 @@ function LandingPage() {
     setIsLoading(true); 
     try {
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/forgotpassworduser`,
+        `${baseUrl}:8000/api/v1/user/forgotpassworduser`,
         { userEmail: email }
       );
       if (response.status === 200) {
@@ -58,7 +58,7 @@ function LandingPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/login`,
+        `${baseUrl}:8000/api/v1/user/login`,
         form
       );
       if (response) {

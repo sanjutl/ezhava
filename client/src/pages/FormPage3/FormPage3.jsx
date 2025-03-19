@@ -53,7 +53,7 @@ function FormPage3() {
     };
     try {
       const response = await axios.patch(
-        `${baseUrl}/api/v1/user/edit/${id}`,
+        `${baseUrl}:8000/api/v1/user/edit/${id}`,
         formData
       );
       if (response.status === 200) {
@@ -82,7 +82,7 @@ function FormPage3() {
     const dataBinding = async () => {
       try {
         const response = await axios.get(
-          `${baseUrl}/api/v1/user/usercarddetails/${id}`
+          `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
         );
         console.log("he hee heee", response.data.data);
         setUserProfile(response.data.data);

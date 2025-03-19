@@ -16,7 +16,7 @@ function AdminReportPage() {
    const fetchReportData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/getComplaint`
+        `${baseUrl}:8000/api/v1/user/getComplaint`
       );
       if(response.status===200){
           setUserData(response.data.reportedUser || [])

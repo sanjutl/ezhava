@@ -25,7 +25,7 @@ function UserMain() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${id}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${id}`
       );
       setUserData(response.data.data);
       console.log(response.data.data, "pwada");
@@ -41,7 +41,7 @@ function UserMain() {
   const TopMatch = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/topmatch/${userId}`
+        `${baseUrl}:8000/api/v1/user/topmatch/${userId}`
       );
       let user = response.data.matches;
       const shuffledUsers = user.sort(() => 0.5 - Math.random()).slice(0, 4);
@@ -55,7 +55,7 @@ function UserMain() {
   const unlockedProfile = async () => {
     try {
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/getunlockedProfile`,
+        `${baseUrl}:8000/api/v1/user/getunlockedProfile`,
         { id: userId }
       );
       // setUserData(response.data.data);
@@ -104,7 +104,7 @@ function UserMain() {
             <img
               src={
                 userData.profilePicture
-                  ? `${baseUrl}${userData.profilePicture}`
+                  ? `${baseUrl}:8000${userData.profilePicture}`
                   : ""
               }
               alt="Profile"
@@ -435,7 +435,7 @@ function UserMain() {
                         <div className="like-card" key={index}>
                           <div className="image-container">
                             <img
-                              src={`${baseUrl}${profile.profilePicture}`}
+                              src={`${baseUrl}:8000${profile.profilePicture}`}
                               alt="Profile"
                             />
                           </div>
@@ -474,7 +474,7 @@ function UserMain() {
                         className={`my-profile-image23-single ${
                           !showDetails ? "bluredProfile234" : ""
                         }`}
-                        src={`${baseUrl}${imgSrc}`}
+                        src={`${baseUrl}:8000${imgSrc}`}
                         alt={`UserImage ${index}`}
                       />
                     ))

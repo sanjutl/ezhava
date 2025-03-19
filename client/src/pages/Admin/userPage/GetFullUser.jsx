@@ -21,7 +21,7 @@ function GetFullUser() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/userdetails`
+        `${baseUrl}:8000/api/v1/user/userdetails`
       );
       setUserData(response.data.data);
     } catch (error) {

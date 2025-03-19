@@ -32,7 +32,7 @@ const PaymentSuccess = () => {
   const datapusher = async () => {
     try {
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/updateUserAccess/${userId}/${profileId}`
+        `${baseUrl}:8000/api/v1/user/updateUserAccess/${userId}/${profileId}`
       );
       console.log(response);
     } catch (error) {
@@ -43,12 +43,12 @@ const PaymentSuccess = () => {
     try {
       // Fetch user details
       const userResponse = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${userId}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${userId}`
       );
       console.log('User Data:', userResponse.data.data);
   
       const profileResponse = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${profileId}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${profileId}`
       );
   
       const userName = userResponse.data.data.firstName || "User";

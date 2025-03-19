@@ -21,7 +21,7 @@ function GetFullReport() {
   const fetchUserData = async () => {   
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/getComplaint`
+        `${baseUrl}:8000/api/v1/user/getComplaint`
       );
       setUserData(response.data.reportedUser);
     } catch (error) {

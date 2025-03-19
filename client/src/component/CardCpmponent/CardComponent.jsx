@@ -30,7 +30,7 @@ const CardComponent = ({ profiles,profileView,likedProfile,liked, toggleLike}) =
               <img
                 src={
                   profiles.profilePicture
-                    ? `https://ukezhavamatrimony.com${profiles.profilePicture}`
+                    ? `http://localhost:8000${profiles.profilePicture}`
                     : " "
                 }
                 alt=""

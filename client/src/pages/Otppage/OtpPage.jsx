@@ -37,7 +37,7 @@ const OtpPage = () => {
       console.log(userEmail);
       
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/verifyOtp/${userEmail}`,
+        `${baseUrl}:8000/api/v1/user/verifyOtp/${userEmail}`,
         form
       );
       setMessage(response.data.message);
@@ -58,7 +58,7 @@ const OtpPage = () => {
   const handleResendOtp = async () => {
     try {
       const response = await axios.post(
-        `${baseUrl}/api/v1/user/resendOtp/${userEmail}`
+        `${baseUrl}:8000/api/v1/user/resendOtp/${userEmail}`
       );
       setMessage("OTP resent successfully!");
       setError("");

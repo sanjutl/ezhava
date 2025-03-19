@@ -36,7 +36,7 @@ function Report1() {
       console.log(formData);
 
       const response = await axios.patch(
-        `${baseUrl}/api/v1/user/userReport/${userId}`,
+        `${baseUrl}:8000/api/v1/user/userReport/${userId}`,
         formData
       );
 
@@ -60,7 +60,7 @@ function Report1() {
   const fetchUserData = async () => {
     try {
       const response = await axios.get(
-        `${baseUrl}/api/v1/user/usercarddetails/${userId}`
+        `${baseUrl}:8000/api/v1/user/usercarddetails/${userId}`
       );
       console.log("User data:", response.data.data);
       setUserData(response.data.data);
